@@ -131,11 +131,16 @@
 
 
 
+
+
+
+
+
+
 "use client";
 
 import Image from 'next/image'
 import { useEffect, useRef } from 'react'
-import Link from 'next/link'
 
 export default function Hero() {
   const textRef = useRef(null)
@@ -165,48 +170,44 @@ export default function Hero() {
 
   return (
     <section className="relative w-full min-h-screen bg-[#E5E5E5] overflow-hidden">
-      {/* CLEAN BG */}
+      {/* BACKGROUND - FIXED */}
       <div className="absolute inset-0 bg-[#E5E5E5]"></div>
       
-      {/* ANIMATED BACKGROUND ELEMENTS - SAME ON ALL SCREENS */}
+      {/* ANIMATED BACKGROUND - PROPERLY SIZED */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute -top-40 -right-40 w-96 h-96 bg-[#FF8A5C]/5 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-[#FF8A5C]/5 rounded-full blur-3xl animate-pulse delay-1000"></div>
+        <div className="absolute -top-40 -right-40 w-[500px] h-[500px] md:w-96 md:h-96 bg-[#FF8A5C]/5 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute -bottom-40 -left-40 w-[500px] h-[500px] md:w-96 md:h-96 bg-[#FF8A5C]/5 rounded-full blur-3xl animate-pulse delay-1000"></div>
       </div>
       
-      {/* CONTENT - SAME LAYOUT ON ALL SCREENS */}
-      <div className="relative z-10 max-w-7xl mx-auto px-4 w-full h-screen flex items-center justify-center">
-        {/* MOBILE: Stack vertically, DESKTOP: Side by side */}
-        <div className="flex flex-col lg:flex-row items-center justify-between w-full gap-8 lg:gap-0">
+      {/* MAIN CONTENT - PERFECTLY CENTERED */}
+      <div className="relative z-10 w-full h-screen flex flex-col items-center justify-center px-4">
+        {/* TEXT & IMAGE CONTAINER */}
+        <div className="flex flex-col items-center justify-center w-full max-w-7xl mx-auto">
           
-          {/* LEFT SIDE - TEXT */}
-          <div ref={textRef} className="w-full lg:w-1/2 flex items-center justify-center lg:justify-start">
-            <div className="relative flex flex-col items-center lg:items-start">
-              {/* MAIN TITLE - SAME PROPORTIONS ON ALL SCREENS */}
-              <h1 className="text-[min(20vw,320px)] font-black leading-[0.7] text-[#FF8A5C]/90 tracking-[-0.05em] select-none text-center lg:text-left animate-fadeIn relative z-0 whitespace-nowrap">
-                UROOJ
-              </h1>
-              
-              {/* GLOW EFFECT - SCALES WITH TEXT */}
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[70%] h-[30%] bg-[#FF8A5C]/20 blur-[min(8vw,100px)] rounded-full -z-10"></div>
-              
-              {/* SUBTITLE - ALWAYS BELOW TEXT */}
-              <div className="mt-4 lg:absolute lg:-bottom-14 lg:left-1 animate-slideUp z-30 w-full">
-                <span className="block text-[#333333] text-[min(3vw,18px)] font-semibold tracking-[0.25em] uppercase text-center lg:text-left">
-                  FULL STACK DEVELOPER
-                </span>
-                <span className="block text-[#666666] text-[min(2.5vw,16px)] font-medium tracking-[0.2em] uppercase mt-1 text-center lg:text-left">
-                  & WEB DESIGNER
-                </span>
-              </div>
+          {/* TEXT SECTION - BADA AUR BOLD */}
+          <div ref={textRef} className="w-full text-center mb-4 md:mb-0 md:text-left md:w-1/2 md:absolute md:left-8 lg:left-16 xl:left-24">
+            <h1 className="text-[120px] sm:text-[160px] md:text-[200px] lg:text-[280px] xl:text-[320px] font-black leading-[0.7] text-[#FF8A5C]/90 tracking-[-0.05em] select-none animate-fadeIn">
+              UROOJ
+            </h1>
+            
+            {/* GLOW EFFECT - BEHIND TEXT */}
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] sm:w-[500px] md:w-[600px] lg:w-[700px] h-[150px] sm:h-[180px] md:h-[200px] lg:h-[220px] bg-[#FF8A5C]/20 blur-[100px] rounded-full -z-10 md:hidden"></div>
+            
+            {/* SUBTITLE - CENTERED ON MOBILE, LEFT ON DESKTOP */}
+            <div className="mt-4 md:absolute md:-bottom-14 md:left-1 animate-slideUp">
+              <span className="block text-[#333333] text-sm sm:text-base md:text-lg font-semibold tracking-[0.25em] uppercase">
+                FULL STACK DEVELOPER
+              </span>
+              <span className="block text-[#666666] text-xs sm:text-sm md:text-base font-medium tracking-[0.2em] uppercase mt-1">
+                & WEB DESIGNER
+              </span>
             </div>
           </div>
           
-          {/* RIGHT SIDE - IMAGE */}
-          <div ref={imageRef} className="w-full lg:w-1/2 flex items-center justify-center lg:justify-end z-20">
-            <div className="relative w-[min(40vw,550px)] h-[min(50vw,650px)] animate-float">
-              {/* IMAGE CONTAINER */}
-              <div className="absolute inset-0 flex items-center justify-center z-30">
+          {/* IMAGE SECTION - BADI AUR PROPER */}
+          <div ref={imageRef} className="w-full flex justify-center mt-8 md:absolute md:right-8 lg:right-16 xl:right-24 md:top-1/2 md:-translate-y-1/2">
+            <div className="relative w-[300px] sm:w-[350px] md:w-[400px] lg:w-[500px] xl:w-[600px] h-[350px] sm:h-[400px] md:h-[450px] lg:h-[550px] xl:h-[650px] animate-float">
+              <div className="absolute inset-0 flex items-center justify-center">
                 <Image 
                   src="/freen2bg.png" 
                   alt="Urooj Rasheed"
@@ -217,29 +218,29 @@ export default function Hero() {
                 />
               </div>
               
-              {/* DECORATIVE DOTS - SAME ON ALL SCREENS */}
-              <div className="absolute -top-3 -right-3 w-2 h-2 lg:w-3 lg:h-3 bg-[#FF8A5C] rounded-full animate-ping z-40"></div>
-              <div className="absolute -bottom-3 -left-3 w-1.5 h-1.5 lg:w-2.5 lg:h-2.5 bg-[#A0A0A0] rounded-full animate-pulse z-40"></div>
-              <div className="absolute top-1/3 -right-4 w-2 h-2 lg:w-3 lg:h-3 border-2 border-[#FF8A5C]/50 rounded-full animate-spin-slow z-40"></div>
-              <div className="absolute bottom-1/3 -left-4 w-1.5 h-1.5 lg:w-2 lg:h-2 bg-[#FF8A5C]/40 rounded-full animate-bounce z-40"></div>
+              {/* DECORATIVE DOTS */}
+              <div className="absolute -top-3 -right-3 w-3 h-3 bg-[#FF8A5C] rounded-full animate-ping"></div>
+              <div className="absolute -bottom-3 -left-3 w-2.5 h-2.5 bg-[#A0A0A0] rounded-full animate-pulse"></div>
+              <div className="absolute top-1/3 -right-4 w-3 h-3 border-2 border-[#FF8A5C]/50 rounded-full animate-spin-slow"></div>
+              <div className="absolute bottom-1/3 -left-4 w-2 h-2 bg-[#FF8A5C]/40 rounded-full animate-bounce"></div>
             </div>
           </div>
         </div>
-      </div>
-      
-      {/* BOTTOM NAVIGATION - CLICKABLE */}
-      <div className="absolute bottom-4 left-1/2 -translate-x-1/2 w-full max-w-6xl px-4 z-50">
-        <div className="flex flex-wrap justify-center items-center gap-2 sm:gap-4 text-[min(2vw,12px)] font-medium tracking-[0.25em] text-[#666666] border-t border-[#CCCCCC]/50 pt-4 uppercase">
-          {['HOME', 'SERVICES', 'PROJECTS', 'EXPERIENCES', 'CASE STUDY', 'CONTACT'].map((item) => (
-            <button
-              key={item}
-              onClick={() => scrollToSection(item)}
-              className="relative hover:text-[#FF8A5C] transition-colors cursor-pointer whitespace-nowrap group bg-transparent border-none p-1 hover:scale-105 duration-300"
-            >
-              {item}
-              <span className="absolute -bottom-1 left-1/2 w-0 h-0.5 bg-[#FF8A5C] group-hover:w-4 group-hover:left-1/2 group-hover:-translate-x-1/2 transition-all duration-300"></span>
-            </button>
-          ))}
+        
+        {/* BOTTOM NAVIGATION */}
+        <div className="absolute bottom-4 left-1/2 -translate-x-1/2 w-full max-w-6xl px-4">
+          <div className="flex flex-wrap justify-center items-center gap-3 sm:gap-4 text-[10px] sm:text-xs font-medium tracking-[0.25em] text-[#666666] border-t border-[#CCCCCC]/50 pt-4 uppercase">
+            {['HOME', 'SERVICES', 'PROJECTS', 'EXPERIENCES', 'CASE STUDY', 'CONTACT'].map((item) => (
+              <button
+                key={item}
+                onClick={() => scrollToSection(item)}
+                className="relative hover:text-[#FF8A5C] transition-colors duration-300 group px-1 py-2"
+              >
+                {item}
+                <span className="absolute -bottom-1 left-1/2 w-0 h-0.5 bg-[#FF8A5C] group-hover:w-4 group-hover:left-1/2 group-hover:-translate-x-1/2 transition-all duration-300"></span>
+              </button>
+            ))}
+          </div>
         </div>
       </div>
 
@@ -249,12 +250,12 @@ export default function Hero() {
           to { opacity: 1; transform: translateY(0); }
         }
         @keyframes slideUp {
-          from { opacity: 0; transform: translateY(50px) translateX(-50%); }
-          to { opacity: 1; transform: translateY(0) translateX(-50%); }
+          from { opacity: 0; transform: translateY(50px); }
+          to { opacity: 1; transform: translateY(0); }
         }
         @keyframes float {
           0%, 100% { transform: translateY(0px); }
-          50% { transform: translateY(-8px); }
+          50% { transform: translateY(-10px); }
         }
         @keyframes spin-slow {
           from { transform: rotate(0deg); }
@@ -265,26 +266,48 @@ export default function Hero() {
         .animate-float { animation: float 5s ease-in-out infinite; }
         .animate-spin-slow { animation: spin-slow 10s linear infinite; }
         
-        /* HOVER EFFECTS - WORK ON ALL DEVICES */
-        @media (hover: hover) {
-          .group:hover span {
-            width: 1rem;
+        /* Mobile specific adjustments */
+        @media (max-width: 768px) {
+          h1 {
+            font-size: 120px;
+            line-height: 0.7;
           }
-          button:hover {
-            color: #FF8A5C;
-            transform: scale(1.05);
+          .relative.w-\\[300px\\] {
+            width: 280px;
+            height: 330px;
           }
         }
-        
-        /* TOUCH DEVICES - TAP EFFECTS */
-        @media (hover: none) {
-          button:active {
-            color: #FF8A5C;
-            transform: scale(0.95);
-            transition: all 0.2s;
+        @media (max-width: 640px) {
+          h1 {
+            font-size: 100px;
           }
-          button:active span {
-            width: 1rem;
+          .relative.w-\\[300px\\] {
+            width: 250px;
+            height: 300px;
+          }
+        }
+        @media (max-width: 480px) {
+          h1 {
+            font-size: 85px;
+          }
+          .relative.w-\\[300px\\] {
+            width: 220px;
+            height: 270px;
+          }
+          .text-sm {
+            font-size: 12px;
+          }
+          .text-xs {
+            font-size: 10px;
+          }
+        }
+        @media (max-width: 360px) {
+          h1 {
+            font-size: 70px;
+          }
+          .relative.w-\\[300px\\] {
+            width: 190px;
+            height: 240px;
           }
         }
       `}</style>
