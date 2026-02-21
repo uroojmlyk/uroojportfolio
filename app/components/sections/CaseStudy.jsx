@@ -1,3 +1,6 @@
+
+
+
 // "use client";
 
 // import { ExternalLink, Quote, Star, Users, Target, Zap } from 'lucide-react'
@@ -69,7 +72,7 @@
 
 //   return (
 //     <section id="casestudy" className="relative w-full py-32 bg-[#E5E5E5] overflow-hidden">
-//       {/* CLEAN BG - SAME AS ALL SECTIONS */}
+//       {/* CLEAN BG */}
 //       <div className="absolute inset-0 bg-[#E5E5E5]"></div>
       
 //       {/* SUBTLE BACKGROUND ORBS */}
@@ -80,16 +83,29 @@
       
 //       <div className="relative z-20 max-w-7xl mx-auto px-6">
         
-//         {/* ---------- SECTION HEADER - EXACT SAME STYLE ---------- */}
-//         <div className="text-center mb-20">
-//           <span className="inline-block text-[#FF8A5C] text-sm font-semibold tracking-[0.3em] uppercase mb-4">
+//         {/* ---------- SECTION HEADER - MODERN STYLE ---------- */}
+//         <div className="text-center mb-20 animate-fadeIn">
+//           <span className="inline-block text-[#FF8A5C] text-sm font-light tracking-[0.4em] uppercase mb-6 font-['Inter']">
 //             CASE STUDIES
 //           </span>
-//           <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-[#333333] mb-6">
+          
+//           <div className="flex items-center justify-center gap-3 mb-6">
+//             <div className="w-12 h-[1px] bg-[#FF8A5C]/30"></div>
+//             <span className="text-[#FF8A5C] text-xs font-light tracking-[0.3em]">✦</span>
+//             <div className="w-12 h-[1px] bg-[#FF8A5C]/30"></div>
+//           </div>
+          
+//           <h2 className="text-4xl md:text-5xl lg:text-6xl font-light text-[#333333] mb-6 font-['Inter'] tracking-[-0.02em]">
 //             Real Problems, Real Solutions
 //           </h2>
-//           <div className="w-24 h-1 bg-[#FF8A5C]/30 mx-auto rounded-full"></div>
-//           <p className="text-[#666666] text-lg max-w-2xl mx-auto mt-8">
+          
+//           <div className="flex items-center justify-center gap-2 mt-4">
+//             <span className="w-2 h-2 rounded-full bg-[#FF8A5C]/40"></span>
+//             <span className="w-12 h-[1px] bg-[#FF8A5C]/20"></span>
+//             <span className="w-2 h-2 rounded-full bg-[#FF8A5C]/40"></span>
+//           </div>
+          
+//           <p className="text-[#666666] text-lg max-w-2xl mx-auto mt-8 font-['Inter'] font-light leading-relaxed">
 //             How I transformed requirements into successful live websites.
 //           </p>
 //         </div>
@@ -99,10 +115,11 @@
 //           {caseStudies.map((study, index) => (
 //             <div
 //               key={study.id}
-//               className="group relative bg-white/60 backdrop-blur-sm border border-[#CCCCCC]/30 rounded-3xl p-8 lg:p-12 hover:border-[#FF8A5C]/30 transition-all duration-500 hover:shadow-2xl hover:shadow-[#FF8A5C]/5"
+//               className="group relative bg-white/60 backdrop-blur-sm border border-[#CCCCCC]/30 rounded-3xl p-8 lg:p-12 hover:border-[#FF8A5C]/30 transition-all duration-700 hover:shadow-2xl hover:shadow-[#FF8A5C]/5 animate-slideUp"
+//               style={{ animationDelay: `${index * 0.2}s` }}
 //             >
 //               {/* DECORATIVE LINE */}
-//               <div className="absolute top-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-[#FF8A5C] group-hover:w-32 transition-all duration-500 rounded-full"></div>
+//               <div className="absolute top-0 left-1/2 -translate-x-1/2 w-0 h-[1px] bg-[#FF8A5C] group-hover:w-32 transition-all duration-700 rounded-full"></div>
               
 //               <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
                 
@@ -110,61 +127,61 @@
 //                 <div className="space-y-6">
 //                   {/* CATEGORY BADGE */}
 //                   <div className="flex items-center gap-3">
-//                     <span className="px-4 py-2 bg-[#FF8A5C]/10 rounded-full text-xs font-semibold tracking-[0.2em] text-[#FF8A5C] uppercase">
+//                     <span className="px-4 py-2 bg-[#FF8A5C]/10 rounded-full text-xs font-light tracking-[0.2em] text-[#FF8A5C] uppercase font-['Inter']">
 //                       {study.category}
 //                     </span>
-//                     <span className="px-4 py-2 bg-white border border-[#CCCCCC]/30 rounded-full text-xs text-[#666666]">
+//                     <span className="px-4 py-2 bg-white border border-[#CCCCCC]/30 rounded-full text-xs font-light text-[#666666] font-['Inter']">
 //                       ⏱️ {study.duration}
 //                     </span>
 //                   </div>
 
 //                   {/* TITLE */}
-//                   <h3 className="text-3xl lg:text-4xl font-bold text-[#333333] leading-tight">
+//                   <h3 className="text-3xl lg:text-4xl font-light text-[#333333] leading-tight font-['Inter'] tracking-[-0.02em] group-hover:text-[#FF8A5C] transition-colors duration-500">
 //                     {study.title}
 //                   </h3>
 
 //                   {/* CLIENT & ROLE */}
 //                   <div className="flex flex-wrap items-center gap-4 text-sm">
-//                     <span className="flex items-center gap-1 text-[#666666]">
-//                       <Users size={16} className="text-[#999999]" />
+//                     <span className="flex items-center gap-1 text-[#666666] font-light font-['Inter']">
+//                       <Users size={16} className="text-[#999999] group-hover:text-[#FF8A5C] transition-colors duration-300" />
 //                       {study.client}
 //                     </span>
 //                     <span className="w-1 h-1 bg-[#CCCCCC] rounded-full"></span>
-//                     <span className="flex items-center gap-1 text-[#666666]">
-//                       <Target size={16} className="text-[#999999]" />
+//                     <span className="flex items-center gap-1 text-[#666666] font-light font-['Inter']">
+//                       <Target size={16} className="text-[#999999] group-hover:text-[#FF8A5C] transition-colors duration-300" />
 //                       {study.role}
 //                     </span>
 //                   </div>
 
 //                   {/* CHALLENGE */}
 //                   <div className="space-y-2">
-//                     <h4 className="text-sm font-semibold tracking-[0.2em] text-[#FF8A5C] uppercase">
+//                     <h4 className="text-xs font-light tracking-[0.25em] text-[#FF8A5C] uppercase font-['Inter']">
 //                       Challenge
 //                     </h4>
-//                     <p className="text-[#666666] text-base leading-relaxed">
+//                     <p className="text-[#666666] text-base font-light leading-relaxed font-['Inter']">
 //                       {study.challenge}
 //                     </p>
 //                   </div>
 
 //                   {/* SOLUTION */}
 //                   <div className="space-y-2">
-//                     <h4 className="text-sm font-semibold tracking-[0.2em] text-[#FF8A5C] uppercase">
+//                     <h4 className="text-xs font-light tracking-[0.25em] text-[#FF8A5C] uppercase font-['Inter']">
 //                       Solution
 //                     </h4>
-//                     <p className="text-[#666666] text-base leading-relaxed">
+//                     <p className="text-[#666666] text-base font-light leading-relaxed font-['Inter']">
 //                       {study.solution}
 //                     </p>
 //                   </div>
 
 //                   {/* RESULTS */}
 //                   <div className="space-y-3">
-//                     <h4 className="text-sm font-semibold tracking-[0.2em] text-[#FF8A5C] uppercase">
+//                     <h4 className="text-xs font-light tracking-[0.25em] text-[#FF8A5C] uppercase font-['Inter']">
 //                       Results
 //                     </h4>
 //                     <ul className="space-y-2">
 //                       {study.results.map((result, i) => (
-//                         <li key={i} className="flex items-start gap-3 text-sm text-[#666666]">
-//                           <span className="text-[#FF8A5C] font-bold">→</span>
+//                         <li key={i} className="flex items-start gap-3 text-sm text-[#666666] font-light font-['Inter'] group/result">
+//                           <span className="text-[#FF8A5C] font-light group-hover/result:translate-x-1 transition-transform duration-300">→</span>
 //                           {result}
 //                         </li>
 //                       ))}
@@ -176,7 +193,7 @@
 //                     {study.tags.map((tag, i) => (
 //                       <span
 //                         key={i}
-//                         className="px-3 py-1.5 bg-white border border-[#CCCCCC]/30 rounded-full text-xs text-[#666666]"
+//                         className="px-3 py-1.5 bg-white border border-[#CCCCCC]/30 rounded-full text-xs font-light text-[#666666] font-['Inter'] hover:border-[#FF8A5C]/30 hover:bg-[#FF8A5C]/5 transition-all duration-300"
 //                       >
 //                         {tag}
 //                       </span>
@@ -188,29 +205,29 @@
 //                     <Link
 //                       href={study.liveLink}
 //                       target="_blank"
-//                       className="inline-flex items-center gap-2 px-6 py-3 bg-[#FF8A5C] text-white rounded-full font-medium hover:bg-[#FF7A4A] transition-all duration-300 group/btn"
+//                       className="group/btn inline-flex items-center gap-3 px-6 py-3 bg-[#FF8A5C] text-white rounded-full font-light tracking-[0.05em] hover:bg-[#FF7A4A] transition-all duration-500 hover:shadow-[0_0_30px_rgba(255,138,92,0.3)] font-['Inter']"
 //                     >
-//                       View Live Project
-//                       <ExternalLink size={16} className="group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-transform" />
+//                       <span>View Live Project</span>
+//                       <ExternalLink size={16} className="group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1 transition-transform duration-300" />
 //                     </Link>
 //                   </div>
 //                 </div>
 
 //                 {/* RIGHT SIDE - PROJECT IMAGE */}
-//                 <div className="relative lg:sticky lg:top-28">
-//                   <div className="relative aspect-[4/3] rounded-2xl overflow-hidden border border-[#CCCCCC]/30 shadow-xl group/image">
+//                 <div className="relative lg:sticky lg:top-28 group/image">
+//                   <div className="relative aspect-[4/3] rounded-2xl overflow-hidden border border-[#CCCCCC]/30 shadow-xl">
 //                     <Image
 //                       src={study.image}
 //                       alt={study.title}
 //                       fill
-//                       className="object-cover object-top"
+//                       className="object-cover object-top transition-transform duration-700 group-hover/image:scale-105"
 //                     />
-//                     <div className="absolute inset-0 bg-gradient-to-t from-[#333333]/50 to-transparent opacity-0 group-hover/image:opacity-100 transition-opacity duration-500"></div>
+//                     <div className="absolute inset-0 bg-gradient-to-t from-[#333333]/70 via-[#333333]/20 to-transparent opacity-0 group-hover/image:opacity-100 transition-opacity duration-500"></div>
 //                   </div>
                   
 //                   {/* DECORATIVE DOTS */}
-//                   <div className="absolute -top-4 -right-4 w-3 h-3 bg-[#FF8A5C] rounded-full"></div>
-//                   <div className="absolute -bottom-4 -left-4 w-2 h-2 bg-[#A0A0A0] rounded-full"></div>
+//                   <div className="absolute -top-4 -right-4 w-3 h-3 bg-[#FF8A5C] rounded-full animate-pulse-slow"></div>
+//                   <div className="absolute -bottom-4 -left-4 w-2 h-2 bg-[#A0A0A0] rounded-full animate-pulse-slow"></div>
 //                 </div>
 //               </div>
 //             </div>
@@ -219,77 +236,133 @@
 
 //         {/* ---------- TESTIMONIALS SECTION ---------- */}
 //         <div className="mt-32">
-//           <div className="text-center mb-16">
-//             <span className="inline-block text-[#FF8A5C] text-sm font-semibold tracking-[0.3em] uppercase mb-4">
+//           <div className="text-center mb-16 animate-fadeIn">
+//             <span className="inline-block text-[#FF8A5C] text-sm font-light tracking-[0.4em] uppercase mb-6 font-['Inter']">
 //               TESTIMONIALS
 //             </span>
-//             <h3 className="text-3xl md:text-4xl font-bold text-[#333333] mb-4">
+            
+//             <div className="flex items-center justify-center gap-3 mb-6">
+//               <div className="w-12 h-[1px] bg-[#FF8A5C]/30"></div>
+//               <span className="text-[#FF8A5C] text-xs font-light tracking-[0.3em]">✦</span>
+//               <div className="w-12 h-[1px] bg-[#FF8A5C]/30"></div>
+//             </div>
+            
+//             <h3 className="text-3xl md:text-4xl font-light text-[#333333] mb-4 font-['Inter'] tracking-[-0.02em]">
 //               What Clients Say
 //             </h3>
-//             <div className="w-16 h-1 bg-[#FF8A5C]/30 mx-auto rounded-full"></div>
+            
+//             <div className="flex items-center justify-center gap-2 mt-4">
+//               <span className="w-2 h-2 rounded-full bg-[#FF8A5C]/40"></span>
+//               <span className="w-12 h-[1px] bg-[#FF8A5C]/20"></span>
+//               <span className="w-2 h-2 rounded-full bg-[#FF8A5C]/40"></span>
+//             </div>
 //           </div>
 
 //           <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-//             {testimonials.map((testimonial) => (
+//             {testimonials.map((testimonial, index) => (
 //               <div
 //                 key={testimonial.id}
-//                 className="relative bg-white/60 backdrop-blur-sm border border-[#CCCCCC]/30 rounded-2xl p-8 hover:border-[#FF8A5C]/30 transition-all duration-500 group"
+//                 className="relative bg-white/60 backdrop-blur-sm border border-[#CCCCCC]/30 rounded-2xl p-8 hover:border-[#FF8A5C]/30 transition-all duration-500 group animate-slideUp"
+//                 style={{ animationDelay: `${index * 0.15}s` }}
 //               >
 //                 {/* QUOTE ICON */}
-//                 <Quote size={32} className="absolute top-6 right-6 text-[#FF8A5C]/20 group-hover:text-[#FF8A5C]/30 transition-colors" />
+//                 <Quote size={32} className="absolute top-6 right-6 text-[#FF8A5C]/10 group-hover:text-[#FF8A5C]/20 transition-colors duration-500" />
                 
 //                 {/* RATING */}
 //                 <div className="flex items-center gap-1 mb-4">
 //                   {[...Array(testimonial.rating)].map((_, i) => (
-//                     <Star key={i} size={16} className="fill-[#FF8A5C] text-[#FF8A5C]" />
+//                     <Star 
+//                       key={i} 
+//                       size={16} 
+//                       className="fill-[#FF8A5C] text-[#FF8A5C] group-hover:scale-110 transition-transform duration-300" 
+//                       style={{ animationDelay: `${i * 0.1}s` }}
+//                     />
 //                   ))}
 //                 </div>
 
 //                 {/* CONTENT */}
-//                 <p className="text-[#666666] text-base leading-relaxed mb-6 italic">
+//                 <p className="text-[#666666] text-base font-light leading-relaxed mb-6 italic font-['Inter']">
 //                   "{testimonial.content}"
 //                 </p>
 
 //                 {/* AUTHOR */}
 //                 <div>
-//                   <h4 className="text-[#333333] font-bold">{testimonial.name}</h4>
-//                   <p className="text-sm text-[#999999]">{testimonial.role}</p>
-//                   <span className="inline-block mt-2 text-xs text-[#FF8A5C] font-medium">
+//                   <h4 className="text-[#333333] font-light text-lg font-['Inter'] tracking-[-0.02em]">
+//                     {testimonial.name}
+//                   </h4>
+//                   <p className="text-sm font-light text-[#999999] font-['Inter']">{testimonial.role}</p>
+//                   <span className="inline-block mt-2 text-xs font-light text-[#FF8A5C] font-['Inter'] tracking-[0.1em]">
 //                     {testimonial.project}
 //                   </span>
 //                 </div>
 
 //                 {/* DECORATIVE DOT */}
-//                 <div className="absolute bottom-6 left-6 w-1.5 h-1.5 bg-[#FF8A5C]/30 rounded-full"></div>
+//                 <div className="absolute bottom-6 left-6 w-1.5 h-1.5 bg-[#FF8A5C]/20 rounded-full group-hover:bg-[#FF8A5C]/40 transition-colors duration-300"></div>
 //               </div>
 //             ))}
 //           </div>
 //         </div>
 
 //         {/* ---------- CTA - LET'S WORK TOGETHER ---------- */}
-//         <div className="mt-32 text-center">
-//           <div className="relative max-w-3xl mx-auto bg-white/60 backdrop-blur-sm border border-[#CCCCCC]/30 rounded-3xl p-12 hover:border-[#FF8A5C]/30 transition-all duration-500">
-//             <Zap size={40} className="mx-auto mb-6 text-[#FF8A5C]" />
-//             <h3 className="text-3xl md:text-4xl font-bold text-[#333333] mb-4">
+//         <div className="mt-32 text-center animate-fadeIn">
+//           <div className="relative max-w-3xl mx-auto bg-white/60 backdrop-blur-sm border border-[#CCCCCC]/30 rounded-3xl p-12 hover:border-[#FF8A5C]/30 transition-all duration-700 hover:shadow-2xl hover:shadow-[#FF8A5C]/5 group/cta">
+//             <Zap size={40} className="mx-auto mb-6 text-[#FF8A5C] group-hover/cta:scale-110 transition-transform duration-500" />
+//             <h3 className="text-3xl md:text-4xl font-light text-[#333333] mb-4 font-['Inter'] tracking-[-0.02em]">
 //               Ready to Start Your Project?
 //             </h3>
-//             <p className="text-[#666666] text-lg mb-8 max-w-xl mx-auto">
+//             <p className="text-[#666666] text-lg font-light mb-8 max-w-xl mx-auto font-['Inter']">
 //               Let's create something amazing together. I'm currently available for freelance work.
 //             </p>
 //             <Link
 //               href="#contact"
-//               className="inline-flex items-center gap-2 px-8 py-4 bg-[#FF8A5C] text-white rounded-full font-semibold hover:bg-[#FF7A4A] transition-all duration-300 group"
+//               className="inline-flex items-center gap-3 px-8 py-4 bg-[#FF8A5C] text-white rounded-full font-light tracking-[0.05em] hover:bg-[#FF7A4A] transition-all duration-500 hover:shadow-[0_0_30px_rgba(255,138,92,0.3)] font-['Inter'] group/link"
 //             >
-//               Let's Talk
-//               <span className="group-hover:translate-x-1 transition-transform">→</span>
+//               <span>Let's Talk</span>
+//               <span className="group-hover/link:translate-x-1 transition-transform duration-300">→</span>
 //             </Link>
 //           </div>
 //         </div>
+        
+//         {/* BOTTOM DECORATIVE LINE */}
+//         <div className="flex items-center justify-center gap-4 mt-20">
+//           <div className="w-16 h-[1px] bg-[#FF8A5C]/20"></div>
+//           <span className="text-[#FF8A5C] text-xs font-light tracking-[0.3em]">◈</span>
+//           <div className="w-16 h-[1px] bg-[#FF8A5C]/20"></div>
+//         </div>
 //       </div>
+
+//       <style jsx>{`
+//         @keyframes fadeIn {
+//           from { opacity: 0; transform: translateY(20px); }
+//           to { opacity: 1; transform: translateY(0); }
+//         }
+        
+//         @keyframes slideUp {
+//           from { opacity: 0; transform: translateY(40px); }
+//           to { opacity: 1; transform: translateY(0); }
+//         }
+        
+//         @keyframes pulse-slow {
+//           0%, 100% { opacity: 1; transform: scale(1); }
+//           50% { opacity: 0.7; transform: scale(1.1); }
+//         }
+        
+//         .animate-fadeIn {
+//           animation: fadeIn 0.8s ease-out forwards;
+//         }
+        
+//         .animate-slideUp {
+//           animation: slideUp 0.8s ease-out forwards;
+//           opacity: 0;
+//         }
+        
+//         .animate-pulse-slow {
+//           animation: pulse-slow 2s ease-in-out infinite;
+//         }
+//       `}</style>
 //     </section>
 //   )
-// }  
-
+// }   
 
 
 
@@ -338,9 +411,30 @@ export default function CaseStudy() {
         "✅ Optimized performance with Vite",
         "✅ Contact integration for inquiries"
       ],
-      image: "/daimss.png",
+      image: "/dad.png",
       tags: ["React", "Vite", "Tailwind", "Responsive", "UI/UX"],
       liveLink: "https://daim-marriage-hall-and-marquee.vercel.app",
+      accent: "#FF8A5C"
+    },
+    {
+      id: 3,
+      title: "Zeno Software House — Corporate Website",
+      client: "Zeno Software House, Karachi DHA Phase 6",
+      category: "Corporate Website",
+      duration: "2 Weeks",
+      role: "Full Stack Developer",
+      challenge: "Zeno Software House needed a professional corporate website to establish their online presence in Karachi's competitive tech industry. They required a modern, trustworthy platform to showcase their services, portfolio, and attract potential clients.",
+      solution: "Built a Next.js corporate website with elegant UI/UX, comprehensive services showcase, portfolio display with filtering, client testimonials section, and integrated contact forms. Focused on performance, SEO optimization, and mobile responsiveness.",
+      results: [
+        "✅ Live production website deployed on Vercel",
+        "✅ Professional services and portfolio showcase",
+        "✅ Client testimonials for social proof",
+        "✅ SEO optimized for better visibility",
+        "✅ Fully responsive across all devices"
+      ],
+      image: "/love.png",
+      tags: ["Next.js", "Tailwind", "SEO", "Corporate", "Responsive"],
+      liveLink: "https://softwarehouse-bop9.vercel.app",
       accent: "#FF8A5C"
     }
   ]
@@ -361,6 +455,14 @@ export default function CaseStudy() {
       content: "Very satisfied with the website. Clean design, fast loading, and exactly what we needed. Great communication and timely delivery.",
       rating: 5,
       project: "Daim Marriage Hall"
+    },
+    {
+      id: 3,
+      name: "Zeno Software House",
+      role: "Director",
+      content: "Urooj delivered an exceptional corporate website for our software house. The design perfectly represents our brand and the functionality is top-notch. Highly recommended!",
+      rating: 5,
+      project: "Zeno Software House"
     }
   ]
 
@@ -552,7 +654,7 @@ export default function CaseStudy() {
             </div>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {testimonials.map((testimonial, index) => (
               <div
                 key={testimonial.id}
