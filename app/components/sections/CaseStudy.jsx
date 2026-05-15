@@ -1,6 +1,5 @@
 
 
-
 // "use client";
 
 // import { ExternalLink, Quote, Star, Users, Target, Zap } from 'lucide-react'
@@ -44,9 +43,30 @@
 //         "✅ Optimized performance with Vite",
 //         "✅ Contact integration for inquiries"
 //       ],
-//       image: "/daimss.png",
+//       image: "/dad.png",
 //       tags: ["React", "Vite", "Tailwind", "Responsive", "UI/UX"],
 //       liveLink: "https://daim-marriage-hall-and-marquee.vercel.app",
+//       accent: "#FF8A5C"
+//     },
+//     {
+//       id: 3,
+//       title: "Zeno Software House — Corporate Website",
+//       client: "Zeno Software House, Karachi DHA Phase 6",
+//       category: "Corporate Website",
+//       duration: "2 Weeks",
+//       role: "Full Stack Developer",
+//       challenge: "Zeno Software House needed a professional corporate website to establish their online presence in Karachi's competitive tech industry. They required a modern, trustworthy platform to showcase their services, portfolio, and attract potential clients.",
+//       solution: "Built a Next.js corporate website with elegant UI/UX, comprehensive services showcase, portfolio display with filtering, client testimonials section, and integrated contact forms. Focused on performance, SEO optimization, and mobile responsiveness.",
+//       results: [
+//         "✅ Live production website deployed on Vercel",
+//         "✅ Professional services and portfolio showcase",
+//         "✅ Client testimonials for social proof",
+//         "✅ SEO optimized for better visibility",
+//         "✅ Fully responsive across all devices"
+//       ],
+//       image: "/love.png",
+//       tags: ["Next.js", "Tailwind", "SEO", "Corporate", "Responsive"],
+//       liveLink: "https://softwarehouse-bop9.vercel.app",
 //       accent: "#FF8A5C"
 //     }
 //   ]
@@ -67,6 +87,14 @@
 //       content: "Very satisfied with the website. Clean design, fast loading, and exactly what we needed. Great communication and timely delivery.",
 //       rating: 5,
 //       project: "Daim Marriage Hall"
+//     },
+//     {
+//       id: 3,
+//       name: "Zeno Software House",
+//       role: "Director",
+//       content: "Urooj delivered an exceptional corporate website for our software house. The design perfectly represents our brand and the functionality is top-notch. Highly recommended!",
+//       rating: 5,
+//       project: "Zeno Software House"
 //     }
 //   ]
 
@@ -258,7 +286,7 @@
 //             </div>
 //           </div>
 
-//           <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+//           <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
 //             {testimonials.map((testimonial, index) => (
 //               <div
 //                 key={testimonial.id}
@@ -362,7 +390,10 @@
 //       `}</style>
 //     </section>
 //   )
-// }   
+// }
+
+
+
 
 
 
@@ -370,7 +401,7 @@
 
 "use client";
 
-import { ExternalLink, Quote, Star, Users, Target, Zap } from 'lucide-react'
+import { ExternalLink, Zap, Shield, Database, Code2, Smartphone, Sparkles } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
 
@@ -378,384 +409,267 @@ export default function CaseStudy() {
   const caseStudies = [
     {
       id: 1,
-      title: "Cafe Janoshi — Ecommerce Transformation",
+      title: "QuizForge",
+      subtitle: "AI-Powered Quiz Platform",
+      client: "Independent Project",
+      role: "Full Stack Developer",
+      duration: "3 weeks",
+      category: "SaaS / EdTech",
+      problem: "Manual quiz creation for educators and content creators is time-consuming. Existing platforms lacked AI integration for dynamic question generation.",
+      constraints: [
+        "No budget for paid AI APIs during development",
+        "Required responsive design for mobile users",
+        "Needed secure authentication for user data"
+      ],
+      solution: "Built a Next.js platform with OpenAI API integration for prompt-based quiz generation. Implemented JWT authentication for user sessions and MongoDB for data persistence.",
+      engineeringDecisions: [
+        "Chose Next.js API routes over separate backend to reduce complexity",
+        "Used JWT with httpOnly cookies for secure authentication",
+        "Implemented React Hook Form with Zod for quiz creation validation"
+      ],
+      technicalHighlights: [
+        "OpenAI API integration with prompt engineering for varied question types",
+        "Protected routes with middleware-based auth checks",
+        "Real-time quiz scoring and result tracking",
+        "Responsive dashboard for quiz management"
+      ],
+      architecture: {
+        frontend: "Next.js 14 (App Router)",
+        backend: "Next.js API Routes",
+        database: "MongoDB Atlas",
+        auth: "JWT (httpOnly cookies)"
+      },
+      coreTech: ["Next.js", "React", "MongoDB", "Tailwind CSS", "JWT"],
+      otherTech: ["OpenAI API", "React Hook Form", "Zod", "bcryptjs"],
+      liveLink: "https://quizplatform-7dh5.vercel.app",
+      image: "/quizforge.png",
+      imageAlt: "QuizForge dashboard showing quiz creation interface"
+    },
+    {
+      id: 2,
+      title: "Cafe Janoshi",
+      subtitle: "Restaurant Ordering Platform",
       client: "Cafe Janoshi, Okara",
-      category: "Ecommerce Website",
-      duration: "2 Weeks",
       role: "Full Stack Developer",
-      challenge: "Cafe Janoshi needed a modern website to showcase their menu and allow customers to easily place orders. They wanted a seamless cart experience, WhatsApp integration for orders, and Google Maps for location discovery.",
-      solution: "Built a Next.js ecommerce platform with dynamic cart functionality, real-time price updates, and responsive menu cards. Integrated WhatsApp API for direct orders and Google Maps for store location.",
-      results: [
-        "✅ Live production website deployed on Vercel",
-        "✅ Fully responsive menu display with HD images",
-        "✅ Seamless cart and order flow",
-        "✅ Easy-to-update product management"
+      duration: "2 weeks",
+      category: "Ecommerce / Food Tech",
+      problem: "Restaurant needed online ordering but traditional payment gateways weren't practical. 70%+ expected mobile traffic on limited bandwidth.",
+      constraints: [
+        "3G/4G network conditions in Pakistan (2-5 Mbps average)",
+        "Mobile-first requirement based on customer behavior",
+        "No payment gateway — WhatsApp preferred by customers"
       ],
-      image: "/janoshiss.png",
-      tags: ["Next.js", "Tailwind", "Cart", "WhatsApp API", "Maps"],
+      solution: "Built WhatsApp-based ordering flow eliminating checkout friction. Dynamic cart with localStorage sync. API routes for order management.",
+      engineeringDecisions: [
+        "WhatsApp API over payment gateways due to local user behavior",
+        "localStorage cart with server validation on order submission",
+        "WebP images with fallbacks for bandwidth optimization"
+      ],
+      technicalHighlights: [
+        "Cart state management with React Context + localStorage persistence",
+        "WhatsApp API integration with pre-filled order summaries",
+        "Responsive menu grid with touch-optimized interactions",
+        "Image optimization reducing bandwidth ~35% on mobile"
+      ],
+      architecture: {
+        frontend: "Next.js 14 (App Router)",
+        backend: "Next.js API Routes",
+        database: "MongoDB Atlas",
+        auth: "N/A (WhatsApp-based flow)"
+      },
+      coreTech: ["Next.js", "React", "MongoDB", "Tailwind CSS", "LocalStorage"],
+      otherTech: ["WhatsApp API", "Google Maps API", "WebP"],
       liveLink: "https://cafejanoshi.vercel.app",
-      accent: "#FF8A5C"
-    },
-    {
-      id: 2,
-      title: "Daim Marriage Hall — Digital Presence",
-      client: "Daim Marriage Hall & Marquee",
-      category: "Business Website",
-      duration: "1.5 Weeks",
-      role: "React Developer",
-      challenge: "Daim Marriage Hall required an elegant website to showcase their venue, services, and gallery. They wanted a modern, trustworthy online presence that reflects their premium service quality.",
-      solution: "Developed a high-performance React + Vite website with clean UI, services showcase, and gallery layout. Focused on fast load times and smooth user experience across all devices.",
-      results: [
-        "✅ Modern, responsive business website",
-        "✅ Services and gallery showcase",
-        "✅ Optimized performance with Vite",
-        "✅ Contact integration for inquiries"
-      ],
-      image: "/dad.png",
-      tags: ["React", "Vite", "Tailwind", "Responsive", "UI/UX"],
-      liveLink: "https://daim-marriage-hall-and-marquee.vercel.app",
-      accent: "#FF8A5C"
-    },
-    {
-      id: 3,
-      title: "Zeno Software House — Corporate Website",
-      client: "Zeno Software House, Karachi DHA Phase 6",
-      category: "Corporate Website",
-      duration: "2 Weeks",
-      role: "Full Stack Developer",
-      challenge: "Zeno Software House needed a professional corporate website to establish their online presence in Karachi's competitive tech industry. They required a modern, trustworthy platform to showcase their services, portfolio, and attract potential clients.",
-      solution: "Built a Next.js corporate website with elegant UI/UX, comprehensive services showcase, portfolio display with filtering, client testimonials section, and integrated contact forms. Focused on performance, SEO optimization, and mobile responsiveness.",
-      results: [
-        "✅ Live production website deployed on Vercel",
-        "✅ Professional services and portfolio showcase",
-        "✅ Client testimonials for social proof",
-        "✅ SEO optimized for better visibility",
-        "✅ Fully responsive across all devices"
-      ],
-      image: "/love.png",
-      tags: ["Next.js", "Tailwind", "SEO", "Corporate", "Responsive"],
-      liveLink: "https://softwarehouse-bop9.vercel.app",
-      accent: "#FF8A5C"
-    }
-  ]
-
-  const testimonials = [
-    {
-      id: 1,
-      name: "Cafe Janoshi",
-      role: "Business Owner",
-      content: "Urooj developed our complete ecommerce website. The cart system works perfectly and our customers love the easy ordering process. Professional work!",
-      rating: 5,
-      project: "Cafe Janoshi"
-    },
-    {
-      id: 2,
-      name: "Daim Marriage Hall",
-      role: "Management",
-      content: "Very satisfied with the website. Clean design, fast loading, and exactly what we needed. Great communication and timely delivery.",
-      rating: 5,
-      project: "Daim Marriage Hall"
-    },
-    {
-      id: 3,
-      name: "Zeno Software House",
-      role: "Director",
-      content: "Urooj delivered an exceptional corporate website for our software house. The design perfectly represents our brand and the functionality is top-notch. Highly recommended!",
-      rating: 5,
-      project: "Zeno Software House"
+      image: "/janoshiss.png",
+      imageAlt: "Cafe Janoshi menu interface showing cart functionality"
     }
   ]
 
   return (
-    <section id="casestudy" className="relative w-full py-32 bg-[#E5E5E5] overflow-hidden">
-      {/* CLEAN BG */}
+    <section id="casestudy" className="relative w-full min-h-screen bg-[#E5E5E5] overflow-x-hidden">
       <div className="absolute inset-0 bg-[#E5E5E5]"></div>
       
-      {/* SUBTLE BACKGROUND ORBS */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-40 right-40 w-96 h-96 bg-[#FF8A5C]/5 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-40 left-40 w-96 h-96 bg-[#FF8A5C]/5 rounded-full blur-3xl"></div>
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-40 right-20 w-96 h-96 bg-[#FF8A5C]/5 rounded-full blur-3xl"></div>
       </div>
       
-      <div className="relative z-20 max-w-7xl mx-auto px-6">
+      <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 md:py-24">
         
-        {/* ---------- SECTION HEADER - MODERN STYLE ---------- */}
-        <div className="text-center mb-20 animate-fadeIn">
-          <span className="inline-block text-[#FF8A5C] text-sm font-light tracking-[0.4em] uppercase mb-6 font-['Inter']">
+        <div className="text-center mb-12 sm:mb-16">
+          <span className="inline-block text-[#FF8A5C] text-xs sm:text-sm font-medium tracking-[0.3em] uppercase mb-4">
             CASE STUDIES
           </span>
-          
-          <div className="flex items-center justify-center gap-3 mb-6">
-            <div className="w-12 h-[1px] bg-[#FF8A5C]/30"></div>
-            <span className="text-[#FF8A5C] text-xs font-light tracking-[0.3em]">✦</span>
-            <div className="w-12 h-[1px] bg-[#FF8A5C]/30"></div>
-          </div>
-          
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-light text-[#333333] mb-6 font-['Inter'] tracking-[-0.02em]">
-            Real Problems, Real Solutions
+          <div className="w-12 h-[1px] bg-[#FF8A5C]/40 mx-auto mb-6"></div>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-normal text-[#333333] mb-4 tracking-[-0.02em]">
+            Real Projects, Real Decisions
           </h2>
-          
-          <div className="flex items-center justify-center gap-2 mt-4">
-            <span className="w-2 h-2 rounded-full bg-[#FF8A5C]/40"></span>
-            <span className="w-12 h-[1px] bg-[#FF8A5C]/20"></span>
-            <span className="w-2 h-2 rounded-full bg-[#FF8A5C]/40"></span>
-          </div>
-          
-          <p className="text-[#666666] text-lg max-w-2xl mx-auto mt-8 font-['Inter'] font-light leading-relaxed">
-            How I transformed requirements into successful live websites.
+          <p className="text-[#666666] text-base max-w-2xl mx-auto font-normal">
+            Production applications built for real requirements
           </p>
         </div>
 
-        {/* ---------- CASE STUDIES GRID ---------- */}
-        <div className="space-y-20">
-          {caseStudies.map((study, index) => (
-            <div
-              key={study.id}
-              className="group relative bg-white/60 backdrop-blur-sm border border-[#CCCCCC]/30 rounded-3xl p-8 lg:p-12 hover:border-[#FF8A5C]/30 transition-all duration-700 hover:shadow-2xl hover:shadow-[#FF8A5C]/5 animate-slideUp"
-              style={{ animationDelay: `${index * 0.2}s` }}
-            >
-              {/* DECORATIVE LINE */}
-              <div className="absolute top-0 left-1/2 -translate-x-1/2 w-0 h-[1px] bg-[#FF8A5C] group-hover:w-32 transition-all duration-700 rounded-full"></div>
-              
-              <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+        <div className="space-y-10">
+          {caseStudies.map((study) => (
+            <article key={study.id} className="bg-white rounded-xl border border-[#E0E0E0] overflow-hidden hover:border-[#FF8A5C]/30 transition-all duration-300">
+              <div className="grid lg:grid-cols-2 gap-0">
                 
-                {/* LEFT SIDE - PROJECT INFO */}
-                <div className="space-y-6">
-                  {/* CATEGORY BADGE */}
-                  <div className="flex items-center gap-3">
-                    <span className="px-4 py-2 bg-[#FF8A5C]/10 rounded-full text-xs font-light tracking-[0.2em] text-[#FF8A5C] uppercase font-['Inter']">
-                      {study.category}
-                    </span>
-                    <span className="px-4 py-2 bg-white border border-[#CCCCCC]/30 rounded-full text-xs font-light text-[#666666] font-['Inter']">
-                      ⏱️ {study.duration}
-                    </span>
-                  </div>
+                <div className="p-6 sm:p-8">
+                  <header className="mb-6">
+                    <div className="flex flex-wrap items-center gap-2 mb-3">
+                      <span className="px-2.5 py-0.5 bg-[#FF8A5C]/10 rounded text-xs font-mono text-[#FF8A5C]">
+                        {study.category}
+                      </span>
+                      <span className="px-2.5 py-0.5 bg-[#F5F5F5] rounded text-xs font-mono text-[#666666]">
+                        {study.duration}
+                      </span>
+                    </div>
+                    <h3 className="text-2xl sm:text-3xl font-medium text-[#333333] tracking-[-0.02em]">
+                      {study.title}
+                    </h3>
+                    <p className="text-[#FF8A5C] text-sm mt-1">{study.subtitle}</p>
+                    <div className="flex flex-wrap gap-3 text-xs text-[#666666] mt-3">
+                      <span>{study.client}</span>
+                      <span>•</span>
+                      <span>{study.role}</span>
+                    </div>
+                  </header>
 
-                  {/* TITLE */}
-                  <h3 className="text-3xl lg:text-4xl font-light text-[#333333] leading-tight font-['Inter'] tracking-[-0.02em] group-hover:text-[#FF8A5C] transition-colors duration-500">
-                    {study.title}
-                  </h3>
+                  <section className="mb-5">
+                    <h4 className="text-xs font-semibold text-[#333333] uppercase tracking-wider mb-2">Problem</h4>
+                    <p className="text-sm text-[#666666] leading-relaxed">{study.problem}</p>
+                  </section>
 
-                  {/* CLIENT & ROLE */}
-                  <div className="flex flex-wrap items-center gap-4 text-sm">
-                    <span className="flex items-center gap-1 text-[#666666] font-light font-['Inter']">
-                      <Users size={16} className="text-[#999999] group-hover:text-[#FF8A5C] transition-colors duration-300" />
-                      {study.client}
-                    </span>
-                    <span className="w-1 h-1 bg-[#CCCCCC] rounded-full"></span>
-                    <span className="flex items-center gap-1 text-[#666666] font-light font-['Inter']">
-                      <Target size={16} className="text-[#999999] group-hover:text-[#FF8A5C] transition-colors duration-300" />
-                      {study.role}
-                    </span>
-                  </div>
-
-                  {/* CHALLENGE */}
-                  <div className="space-y-2">
-                    <h4 className="text-xs font-light tracking-[0.25em] text-[#FF8A5C] uppercase font-['Inter']">
-                      Challenge
+                  <section className="mb-5 p-3 bg-[#FFF8F5] rounded-lg border-l-2 border-l-[#FF8A5C]">
+                    <h4 className="text-xs font-semibold text-[#333333] uppercase tracking-wider mb-2 flex items-center gap-1">
+                      <Shield size={12} /> Constraints
                     </h4>
-                    <p className="text-[#666666] text-base font-light leading-relaxed font-['Inter']">
-                      {study.challenge}
-                    </p>
-                  </div>
-
-                  {/* SOLUTION */}
-                  <div className="space-y-2">
-                    <h4 className="text-xs font-light tracking-[0.25em] text-[#FF8A5C] uppercase font-['Inter']">
-                      Solution
-                    </h4>
-                    <p className="text-[#666666] text-base font-light leading-relaxed font-['Inter']">
-                      {study.solution}
-                    </p>
-                  </div>
-
-                  {/* RESULTS */}
-                  <div className="space-y-3">
-                    <h4 className="text-xs font-light tracking-[0.25em] text-[#FF8A5C] uppercase font-['Inter']">
-                      Results
-                    </h4>
-                    <ul className="space-y-2">
-                      {study.results.map((result, i) => (
-                        <li key={i} className="flex items-start gap-3 text-sm text-[#666666] font-light font-['Inter'] group/result">
-                          <span className="text-[#FF8A5C] font-light group-hover/result:translate-x-1 transition-transform duration-300">→</span>
-                          {result}
+                    <ul className="space-y-1">
+                      {study.constraints.map((item, i) => (
+                        <li key={i} className="flex items-start gap-2 text-xs text-[#666666]">
+                          <span className="w-1 h-1 bg-[#FF8A5C] rounded-full flex-shrink-0 mt-1"></span>
+                          <span>{item}</span>
                         </li>
                       ))}
                     </ul>
-                  </div>
+                  </section>
 
-                  {/* TAGS */}
-                  <div className="flex flex-wrap gap-2 pt-4">
-                    {study.tags.map((tag, i) => (
-                      <span
-                        key={i}
-                        className="px-3 py-1.5 bg-white border border-[#CCCCCC]/30 rounded-full text-xs font-light text-[#666666] font-['Inter'] hover:border-[#FF8A5C]/30 hover:bg-[#FF8A5C]/5 transition-all duration-300"
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
+                  <section className="mb-5">
+                    <h4 className="text-xs font-semibold text-[#333333] uppercase tracking-wider mb-2">Solution</h4>
+                    <p className="text-sm text-[#666666] leading-relaxed">{study.solution}</p>
+                  </section>
 
-                  {/* LIVE LINK */}
-                  <div className="pt-4">
-                    <Link
-                      href={study.liveLink}
-                      target="_blank"
-                      className="group/btn inline-flex items-center gap-3 px-6 py-3 bg-[#FF8A5C] text-white rounded-full font-light tracking-[0.05em] hover:bg-[#FF7A4A] transition-all duration-500 hover:shadow-[0_0_30px_rgba(255,138,92,0.3)] font-['Inter']"
-                    >
-                      <span>View Live Project</span>
-                      <ExternalLink size={16} className="group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1 transition-transform duration-300" />
-                    </Link>
-                  </div>
+                  <section className="mb-5">
+                    <h4 className="text-xs font-semibold text-[#333333] uppercase tracking-wider mb-2 flex items-center gap-1">
+                      <Code2 size={12} /> Engineering Decisions
+                    </h4>
+                    <ul className="space-y-1">
+                      {study.engineeringDecisions.map((item, i) => (
+                        <li key={i} className="flex items-start gap-2 text-xs text-[#666666]">
+                          <span className="w-1 h-1 bg-[#FF8A5C] rounded-full flex-shrink-0 mt-1"></span>
+                          <span>{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </section>
+
+                  <section className="mb-5">
+                    <h4 className="text-xs font-semibold text-[#333333] uppercase tracking-wider mb-2 flex items-center gap-1">
+                      <Sparkles size={12} /> Technical Highlights
+                    </h4>
+                    <ul className="space-y-1">
+                      {study.technicalHighlights.map((item, i) => (
+                        <li key={i} className="flex items-start gap-2 text-xs text-[#666666]">
+                          <span className="w-1 h-1 bg-[#FF8A5C] rounded-full flex-shrink-0 mt-1"></span>
+                          <span>{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </section>
+
+                  <section className="mb-5 p-3 bg-[#F8F8F8] rounded-lg">
+                    <h4 className="text-xs font-semibold text-[#333333] uppercase tracking-wider mb-2 flex items-center gap-1">
+                      <Database size={12} /> Architecture
+                    </h4>
+                    <div className="grid grid-cols-2 gap-2 text-xs">
+                      <div>
+                        <span className="text-[#999999]">Frontend:</span>
+                        <p className="text-[#333333] font-mono text-xs">{study.architecture.frontend}</p>
+                      </div>
+                      <div>
+                        <span className="text-[#999999]">Backend:</span>
+                        <p className="text-[#333333] font-mono text-xs">{study.architecture.backend}</p>
+                      </div>
+                      <div>
+                        <span className="text-[#999999]">Database:</span>
+                        <p className="text-[#333333] font-mono text-xs">{study.architecture.database}</p>
+                      </div>
+                      <div>
+                        <span className="text-[#999999]">Auth:</span>
+                        <p className="text-[#333333] font-mono text-xs">{study.architecture.auth}</p>
+                      </div>
+                    </div>
+                  </section>
+
+                  <section className="mb-6">
+                    <h4 className="text-xs font-semibold text-[#333333] uppercase tracking-wider mb-2">Tech Stack</h4>
+                    <div className="flex flex-wrap gap-2 mb-2">
+                      <span className="text-xs text-[#999999] font-mono">Core:</span>
+                      {study.coreTech.map((tech, i) => (
+                        <span key={i} className="px-2 py-0.5 bg-white border border-[#FF8A5C]/30 rounded text-xs font-mono text-[#FF8A5C]">
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+                    <div className="flex flex-wrap gap-2">
+                      <span className="text-xs text-[#999999] font-mono">Extended:</span>
+                      {study.otherTech.map((tech, i) => (
+                        <span key={i} className="px-2 py-0.5 bg-[#F5F5F5] border border-[#E0E0E0] rounded text-xs font-mono text-[#666666]">
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+                  </section>
+
+                  <Link
+                    href={study.liveLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group inline-flex items-center gap-2 text-sm text-[#FF8A5C] hover:text-[#FF6B3A] transition-colors font-medium"
+                  >
+                    View Live Project
+                    <ExternalLink size={14} className="group-hover:translate-x-0.5 transition-transform" />
+                  </Link>
                 </div>
 
-                {/* RIGHT SIDE - PROJECT IMAGE */}
-                <div className="relative lg:sticky lg:top-28 group/image">
-                  <div className="relative aspect-[4/3] rounded-2xl overflow-hidden border border-[#CCCCCC]/30 shadow-xl">
-                    <Image
-                      src={study.image}
-                      alt={study.title}
-                      fill
-                      className="object-cover object-top transition-transform duration-700 group-hover/image:scale-105"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#333333]/70 via-[#333333]/20 to-transparent opacity-0 group-hover/image:opacity-100 transition-opacity duration-500"></div>
-                  </div>
-                  
-                  {/* DECORATIVE DOTS */}
-                  <div className="absolute -top-4 -right-4 w-3 h-3 bg-[#FF8A5C] rounded-full animate-pulse-slow"></div>
-                  <div className="absolute -bottom-4 -left-4 w-2 h-2 bg-[#A0A0A0] rounded-full animate-pulse-slow"></div>
+                <div className="relative bg-[#F5F5F5] min-h-[400px] lg:min-h-full">
+                  <Image
+                    src={study.image}
+                    alt={study.imageAlt}
+                    fill
+                    className="object-cover object-top"
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                  />
                 </div>
               </div>
-            </div>
+            </article>
           ))}
         </div>
 
-        {/* ---------- TESTIMONIALS SECTION ---------- */}
-        <div className="mt-32">
-          <div className="text-center mb-16 animate-fadeIn">
-            <span className="inline-block text-[#FF8A5C] text-sm font-light tracking-[0.4em] uppercase mb-6 font-['Inter']">
-              TESTIMONIALS
-            </span>
-            
-            <div className="flex items-center justify-center gap-3 mb-6">
-              <div className="w-12 h-[1px] bg-[#FF8A5C]/30"></div>
-              <span className="text-[#FF8A5C] text-xs font-light tracking-[0.3em]">✦</span>
-              <div className="w-12 h-[1px] bg-[#FF8A5C]/30"></div>
-            </div>
-            
-            <h3 className="text-3xl md:text-4xl font-light text-[#333333] mb-4 font-['Inter'] tracking-[-0.02em]">
-              What Clients Say
-            </h3>
-            
-            <div className="flex items-center justify-center gap-2 mt-4">
-              <span className="w-2 h-2 rounded-full bg-[#FF8A5C]/40"></span>
-              <span className="w-12 h-[1px] bg-[#FF8A5C]/20"></span>
-              <span className="w-2 h-2 rounded-full bg-[#FF8A5C]/40"></span>
-            </div>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            {testimonials.map((testimonial, index) => (
-              <div
-                key={testimonial.id}
-                className="relative bg-white/60 backdrop-blur-sm border border-[#CCCCCC]/30 rounded-2xl p-8 hover:border-[#FF8A5C]/30 transition-all duration-500 group animate-slideUp"
-                style={{ animationDelay: `${index * 0.15}s` }}
-              >
-                {/* QUOTE ICON */}
-                <Quote size={32} className="absolute top-6 right-6 text-[#FF8A5C]/10 group-hover:text-[#FF8A5C]/20 transition-colors duration-500" />
-                
-                {/* RATING */}
-                <div className="flex items-center gap-1 mb-4">
-                  {[...Array(testimonial.rating)].map((_, i) => (
-                    <Star 
-                      key={i} 
-                      size={16} 
-                      className="fill-[#FF8A5C] text-[#FF8A5C] group-hover:scale-110 transition-transform duration-300" 
-                      style={{ animationDelay: `${i * 0.1}s` }}
-                    />
-                  ))}
-                </div>
-
-                {/* CONTENT */}
-                <p className="text-[#666666] text-base font-light leading-relaxed mb-6 italic font-['Inter']">
-                  "{testimonial.content}"
-                </p>
-
-                {/* AUTHOR */}
-                <div>
-                  <h4 className="text-[#333333] font-light text-lg font-['Inter'] tracking-[-0.02em]">
-                    {testimonial.name}
-                  </h4>
-                  <p className="text-sm font-light text-[#999999] font-['Inter']">{testimonial.role}</p>
-                  <span className="inline-block mt-2 text-xs font-light text-[#FF8A5C] font-['Inter'] tracking-[0.1em]">
-                    {testimonial.project}
-                  </span>
-                </div>
-
-                {/* DECORATIVE DOT */}
-                <div className="absolute bottom-6 left-6 w-1.5 h-1.5 bg-[#FF8A5C]/20 rounded-full group-hover:bg-[#FF8A5C]/40 transition-colors duration-300"></div>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* ---------- CTA - LET'S WORK TOGETHER ---------- */}
-        <div className="mt-32 text-center animate-fadeIn">
-          <div className="relative max-w-3xl mx-auto bg-white/60 backdrop-blur-sm border border-[#CCCCCC]/30 rounded-3xl p-12 hover:border-[#FF8A5C]/30 transition-all duration-700 hover:shadow-2xl hover:shadow-[#FF8A5C]/5 group/cta">
-            <Zap size={40} className="mx-auto mb-6 text-[#FF8A5C] group-hover/cta:scale-110 transition-transform duration-500" />
-            <h3 className="text-3xl md:text-4xl font-light text-[#333333] mb-4 font-['Inter'] tracking-[-0.02em]">
-              Ready to Start Your Project?
-            </h3>
-            <p className="text-[#666666] text-lg font-light mb-8 max-w-xl mx-auto font-['Inter']">
-              Let's create something amazing together. I'm currently available for freelance work.
-            </p>
+        <div className="mt-16 text-center">
+          <div className="max-w-2xl mx-auto p-8 bg-white rounded-xl border border-[#E0E0E0]">
+            <Zap size={32} className="mx-auto mb-4 text-[#FF8A5C]" />
+            <h3 className="text-xl font-medium text-[#333333] mb-2">Have a project in mind?</h3>
+            <p className="text-[#666666] text-sm mb-4">Available for freelance work — let's discuss your requirements</p>
             <Link
               href="#contact"
-              className="inline-flex items-center gap-3 px-8 py-4 bg-[#FF8A5C] text-white rounded-full font-light tracking-[0.05em] hover:bg-[#FF7A4A] transition-all duration-500 hover:shadow-[0_0_30px_rgba(255,138,92,0.3)] font-['Inter'] group/link"
+              className="inline-flex items-center gap-2 px-5 py-2 bg-[#FF8A5C] text-white text-sm font-medium rounded-lg hover:bg-[#FF6B3A] transition-all duration-300"
             >
-              <span>Let's Talk</span>
-              <span className="group-hover/link:translate-x-1 transition-transform duration-300">→</span>
+              Start a Conversation
+              <ExternalLink size={14} />
             </Link>
           </div>
         </div>
-        
-        {/* BOTTOM DECORATIVE LINE */}
-        <div className="flex items-center justify-center gap-4 mt-20">
-          <div className="w-16 h-[1px] bg-[#FF8A5C]/20"></div>
-          <span className="text-[#FF8A5C] text-xs font-light tracking-[0.3em]">◈</span>
-          <div className="w-16 h-[1px] bg-[#FF8A5C]/20"></div>
-        </div>
       </div>
-
-      <style jsx>{`
-        @keyframes fadeIn {
-          from { opacity: 0; transform: translateY(20px); }
-          to { opacity: 1; transform: translateY(0); }
-        }
-        
-        @keyframes slideUp {
-          from { opacity: 0; transform: translateY(40px); }
-          to { opacity: 1; transform: translateY(0); }
-        }
-        
-        @keyframes pulse-slow {
-          0%, 100% { opacity: 1; transform: scale(1); }
-          50% { opacity: 0.7; transform: scale(1.1); }
-        }
-        
-        .animate-fadeIn {
-          animation: fadeIn 0.8s ease-out forwards;
-        }
-        
-        .animate-slideUp {
-          animation: slideUp 0.8s ease-out forwards;
-          opacity: 0;
-        }
-        
-        .animate-pulse-slow {
-          animation: pulse-slow 2s ease-in-out infinite;
-        }
-      `}</style>
     </section>
   )
 }
